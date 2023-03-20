@@ -10,10 +10,11 @@ export const globalStyles = globalCss({
 
   html: {
     fontSize: '62.5%',
+    fontFamily: 'Nunito Sans'
   },
 
   body: {
-   
+    backgroundColor: '$background',
   },
 
   'body, input, textarea, button': {
