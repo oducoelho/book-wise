@@ -3,7 +3,7 @@ import { styled } from "..";
 export const SideBarContainer = styled('div', {
   height: '95vh',
   width: '250px',
-  background: '$gradient-horizontal',
+  background: '$gradient',
   margin: '20px',
   borderRadius: 8,
 

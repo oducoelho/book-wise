@@ -35,6 +35,7 @@ export const {
       black: '#000000',
 
 			'gradient-vertical': `linear-gradient(180deg, #7FD1CC 0%, #9694F5 100%)`,
+			'gradient': `linear-gradient(60deg, #0E1116 0%, #8381D9 100%)`,
       'gradient-horizontal': `linear-gradient(90deg, #7FD1CC 0%, #9694F5 100%)`,
     },
 
