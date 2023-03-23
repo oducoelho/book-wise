@@ -2,10 +2,11 @@ import { styled } from "..";
 
 export const SideBarContainer = styled('div', {
   height: '95vh',
-  width: '250px',
+  width: '400px',
   background: '$gradient',
   margin: '20px',
   borderRadius: 8,
+  marginRight: '200px',
 
   display: 'flex',
   flexDirection: 'column',
