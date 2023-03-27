@@ -34,7 +34,7 @@ export const Login = styled('div', {
 export const NavItemContainer = styled(Link, {
   textDecoration: "none",
   display: "flex",
-   transition: "0.2s",
+  transition: "0.2s",
   fontSize: '$md',
   fontWeight: 'bold',
 
