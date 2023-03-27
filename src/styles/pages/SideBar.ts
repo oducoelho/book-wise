@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { styled } from "..";
 
 export const SideBarContainer = styled('div', {
   height: '95vh',
   width: '400px',
-  background: '$gradient',
+  background: "$gray700 url('/images/sidebar-bg.png') no-repeat center",
   margin: '20px',
   borderRadius: 8,
   marginRight: '200px',
@@ -23,11 +24,10 @@ export const SideBarContainer = styled('div', {
 })
 
 export const Options = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexDirection: 'column',
-  paddingTop: '50px',
+  display: "flex",
+  flexDirection: "column",
+  gap: "28px",
+  paddingTop: "40px",
 
 })
 
@@ -36,5 +36,47 @@ export const Login = styled('div', {
     fontSize: '$md',
     color: '$gray200',
     fontWeight: 700,
+  }
+})
+
+export const NavItemContainer = styled(Link, {
+  textDecoration: "none",
+  display: "flex",
+  alignItems: "center",
+  transition: "0.2s",
+  fontSize: '$md',
+  fontWeight: 'bold',
+
+  svg: {
+    marginRight: "12px"
+  },
+
+  "&:hover": {
+    color: "$gray100",
+  },
+
+
+  "&::before": {
+    content: "''",
+    width: 4,
+    height: 24,
+    background: "$gradient-vertical",
+    marginRight: "16px",
+    borderRadius: "50px",
+    transition: "0.2s",
+    opacity: 0,
+  },
+
+  variants: {
+    active: {
+      true: {
+        color: "$gray100",
+        fontWeight: "bold",
+
+        "&::before": {
+          opacity: 1,
+        }
+      }
+    }
   }
 })

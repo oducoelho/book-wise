@@ -1,6 +1,6 @@
 import { styled } from "..";
 
-export const InitialPageContainer = styled('div', {
+export const ExploreContainer = styled('div', {
   display: 'flex',
   flexDirection: 'row',
 })
