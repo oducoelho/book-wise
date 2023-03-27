@@ -2,6 +2,7 @@ import { styled } from "..";
 
 export const PostContainer = styled('div', {
   marginTop: '60px',
+  marginLeft: '50px',
 })
 export const Header = styled('div', {
   h1: {
@@ -19,6 +20,7 @@ export const Post = styled('div', {
   borderRadius: 8,
   padding: '20px',
   width: '80%',
+  marginRight: '-800px',
   marginTop: '10px',
 })
 export const User = styled('div', {

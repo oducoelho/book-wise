@@ -3,24 +3,16 @@ import { styled } from "..";
 
 export const SideBarContainer = styled('div', {
   height: '95vh',
-  width: '400px',
+  width: '250px',
   background: "$gray700 url('/images/sidebar-bg.png') no-repeat center",
   margin: '20px',
   borderRadius: 8,
-  marginRight: '200px',
 
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
   padding: '30px 0px',
-
-
-  div: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'center',
-  }
+  alignItems: 'center',
 })
 
 export const Options = styled('div', {
@@ -42,8 +34,7 @@ export const Login = styled('div', {
 export const NavItemContainer = styled(Link, {
   textDecoration: "none",
   display: "flex",
-  alignItems: "center",
-  transition: "0.2s",
+   transition: "0.2s",
   fontSize: '$md',
   fontWeight: 'bold',
 
