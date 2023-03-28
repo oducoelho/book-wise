@@ -1,4 +1,4 @@
-import { InitialPageContainer } from "@/styles/pages/initialPage";
+import { Content, InitialPageContainer } from "@/styles/pages/initialPage";
 import { PopularBooks } from "./components/PopularBooks";
 import { Posts } from "./components/Posts";
 import { SideBar } from "../../components/Sidebar";
@@ -7,8 +7,10 @@ export default function initialPage() {
   return (
     <InitialPageContainer>
       <SideBar />
-      <Posts />
-      <PopularBooks />
+      <Content>
+        <Posts />
+        <PopularBooks />
+      </Content>
     </InitialPageContainer>
   )
 }

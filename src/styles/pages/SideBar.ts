@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { styled } from "..";
 
-export const SideBarContainer = styled('div', {
+export const SideBarContainer = styled('aside', {
   height: '95vh',
-  width: '250px',
-  background: "$gray700 url('/images/sidebar-bg.png') no-repeat center",
+  width: '232px',
+  background: "$gray700 url('https://github.com/oducoelho/book-wise/blob/main/src/assets/sidebar-bg.png?raw=true')",
   margin: '20px',
   borderRadius: 8,
 

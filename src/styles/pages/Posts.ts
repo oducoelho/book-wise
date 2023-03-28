@@ -2,9 +2,20 @@ import { styled } from "..";
 
 export const PostContainer = styled('div', {
   marginTop: '60px',
-  marginLeft: '50px',
+  marginLeft: '-330px',
 })
 export const Header = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+
+  div: {
+    display: 'flex',
+    alignItems: 'center',
+      svg: {
+    marginRight: "12px",
+    color: '$green100',
+  },
+  },
   h1: {
     fontSize: '$2xl',
     color: '$gray100'

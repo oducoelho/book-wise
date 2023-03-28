@@ -3,12 +3,16 @@ import Image from "next/image"
 import Avatar from "../../../assets/Avatar.png"
 import Rating from "../../../assets/Rating.png"
 import BookPoster from "../../../assets/o-hobbit.png"
+import { ChartLineUp } from "phosphor-react"
 
 export const Posts = () => {
   return (
   <PostContainer>
     <Header>
-      <h1>Inicio</h1>
+      <div>
+        <ChartLineUp  size={30} />
+        <h1>Inicio</h1>
+      </div>
       <p>Avaliação mais recente</p>
     </Header>
     <Post>
