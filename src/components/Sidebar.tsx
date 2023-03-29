@@ -5,6 +5,8 @@ import { ChartLineUp } from "phosphor-react"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { Binoculars } from "phosphor-react"
+import { useSession } from "next-auth/react"
+
 
 const NAV_ITEMS = [
   {
@@ -21,6 +23,8 @@ const NAV_ITEMS = [
 
 export const SideBar = () => {
   const router = useRouter();
+
+  const session = useSession();
 
   const navItems = useMemo(() => {
     return NAV_ITEMS;
@@ -39,7 +43,11 @@ export const SideBar = () => {
         </Options>
       </div>
       <Login>
-        <span>Fazer login</span>
+        <span 
+          onClick={() => router.push("/")} 
+        >
+          Fazer login
+        </span>
       </Login>
     </SideBarContainer>
   )

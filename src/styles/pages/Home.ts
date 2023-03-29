@@ -45,7 +45,10 @@ export const LoginOption = styled('div', {
   Image: {
     width: '130px',
   },
-  span: {
-    paddingLeft: '10px'
+  button: {
+    paddingLeft: '10px',
+    border: 'none',
+    backgroundColor: 'transparent',
+    color: '$gray100',
   }
 })

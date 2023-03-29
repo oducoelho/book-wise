@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 //import Ilustração from '../../../assets/o-hobbit.png'
 //import Start from '../../../assets/Rating.png'
 
-export const Books = () => {
+export const ExploreBooks = () => {
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
 

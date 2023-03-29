@@ -2,10 +2,13 @@ import { Content, HomeContainer, HomeImage, Login, LoginOption } from "@/styles/
 import WallPaper from '../assets/HomeCover.png'
 import Google from '../assets/logos_google-icon.png'
 import GitHub from '../assets/akar-icons_github-fill.png'
-import Visitante from '../assets/RocketLaunch.png'
+import VisitanteIcon from '../assets/RocketLaunch.png'
 import Image from "next/image"
+import { signIn } from "next-auth/react"
+import { useRouter } from "next/router"
 
 export default function Home() {
+  const router = useRouter();
   return (
     <HomeContainer>
       <HomeImage>
@@ -16,17 +19,17 @@ export default function Home() {
           <h1>Boas Vindas!</h1>
           <p>Faça login ou assece como visitante</p>
         </Content>
-        <LoginOption>
+        <LoginOption onClick={() => signIn('google')}>
           <Image src={Google} alt="" />
-          <span>Entrar com o Google</span>
+          <button>Entrar com o Google</button>
         </LoginOption>
         <LoginOption>
           <Image src={GitHub} alt="" />
-          <span>Entrar com o Google</span>
+          <button>Entrar com o GitHub</button>
         </LoginOption>
-        <LoginOption>
-          <Image src={Visitante} alt="" />
-          <span>Entrar com o Google</span>
+        <LoginOption onClick={() => router.push("/initialPage")}>
+          <Image src={VisitanteIcon} alt="" />
+          <button>Entrar com o Visitante</button>
         </LoginOption>
 
       </Login>

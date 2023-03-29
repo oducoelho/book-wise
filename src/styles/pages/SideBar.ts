@@ -28,6 +28,7 @@ export const Login = styled('div', {
     fontSize: '$md',
     color: '$gray200',
     fontWeight: 700,
+    cursor: "pointer",
   }
 })
 

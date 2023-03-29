@@ -1,6 +1,6 @@
 import { Content, ExploreContainer } from "@/styles/pages/explore";
 import { SideBar } from "../../components/Sidebar";
-import { Books } from "./components/Books";
+import { ExploreBooks } from "./components/ExploreBooks";
 import { Categories } from "./components/Categories";
 import { Find } from "./components/Find";
 
@@ -11,7 +11,7 @@ export default function explore() {
       <Content>
         <Find />
         <Categories />
-        <Books />
+        <ExploreBooks />
       </Content>
     </ExploreContainer>
   )
