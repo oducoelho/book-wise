@@ -1,11 +1,11 @@
 import { Login, NavItemContainer, Options, SideBarContainer } from "@/styles/pages/SideBar"
 import Image from "next/image"
 import Logo from '../assets/Logo.png' 
-import { ChartLineUp } from "phosphor-react"
+import { ChartLineUp, SignOut } from "phosphor-react"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { Binoculars } from "phosphor-react"
-import { useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 
 
 const NAV_ITEMS = [
@@ -22,9 +22,12 @@ const NAV_ITEMS = [
 ]
 
 export const SideBar = () => {
+  const { data: session } = useSession()
   const router = useRouter();
 
-  const session = useSession();
+  const user = session?.user;
+
+  console.log(user)
 
   const navItems = useMemo(() => {
     return NAV_ITEMS;
@@ -43,11 +46,26 @@ export const SideBar = () => {
         </Options>
       </div>
       <Login>
-        <span 
-          onClick={() => router.push("/")} 
-        >
-          Fazer login
-        </span>
+        {
+          !user  
+          ?
+          (
+            <span 
+              onClick={() => router.push("/")} 
+            >
+              Fazer login
+            </span>
+          )
+          : 
+          (
+            <div>
+              <span>
+                {user?.name}
+              </span>
+              <SignOut color="#F75A68" size={20} onClick={() => signOut()} />
+            </div>
+          )
+        }
       </Login>
     </SideBarContainer>
   )
