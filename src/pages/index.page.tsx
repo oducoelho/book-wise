@@ -9,6 +9,7 @@ import { useRouter } from "next/router"
 
 export default function Home() {
   const router = useRouter();
+
   return (
     <HomeContainer>
       <HomeImage>
@@ -23,7 +24,7 @@ export default function Home() {
           <Image src={Google} alt="" />
           <button>Entrar com o Google</button>
         </LoginOption>
-        <LoginOption>
+        <LoginOption onClick={() => signIn('github')}>
           <Image src={GitHub} alt="" />
           <button>Entrar com o GitHub</button>
         </LoginOption>

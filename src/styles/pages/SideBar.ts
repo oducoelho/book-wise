@@ -24,11 +24,16 @@ export const Options = styled('div', {
 })
 
 export const Login = styled('div', {
+
+
   span: {
-    fontSize: '$md',
+    fontSize: '$sm',
     color: '$gray200',
     fontWeight: 700,
     cursor: "pointer",
+
+    display: "flex",
+    justifyContent: "space-between",
   }
 })
 
@@ -71,4 +76,22 @@ export const NavItemContainer = styled(Link, {
       }
     }
   }
+})
+
+export const Avatar = styled('img', {
+  borderRadius: "100%",
+  objectFit: "cover",
+  width: "40px",
+  height: "40px",
+  border: '3px solid $gray500'
+})
+
+export const LoginContainer = styled('div', {
+  display: "flex",
+  alignItems: "center",
+
+  div: {
+    cursor: "pointer",
+  }
+
 })

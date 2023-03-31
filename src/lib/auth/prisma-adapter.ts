@@ -80,20 +80,20 @@ export function PrismaAdapter(
     },
 
     async updateUser(user) {
-      const updateUser = await prisma.user.update({
+      const updatedUser = await prisma.user.update({
         where: {
-          id: user.id,
+          id: user.id
         },
         data: {
           name: user.name,
           email: user.email,
-          avatar_url: user.avatar_url,
+          avatar_url: user.avatar_url
         }
       })
 
       return {
-        ...updateUser,
-        avatar_url: updateUser.avatar_url!,
+        ...updatedUser,
+        avatar_url: updatedUser.avatar_url!,
         emailVerified: null
       }
     },
@@ -105,14 +105,14 @@ export function PrismaAdapter(
           type: account.type,
           provider: account.provider,
           provider_account_id: account.providerAccountId,
-          refresh_token: account.access_token,
+          refresh_token: account.refresh_token,
           access_token: account.access_token,
           expires_at: account.expires_at,
           token_type: account.token_type,
           scope: account.scope,
           id_token: account.id_token,
           session_state: account.session_state,
-        }
+        },
       })
     },
 
@@ -122,7 +122,7 @@ export function PrismaAdapter(
           user_id: userId,
           expires,
           session_token: sessionToken,
-        }
+        },
       })
 
       return {
@@ -135,17 +135,17 @@ export function PrismaAdapter(
     async getSessionAndUser(sessionToken) {
       const prismaSession = await prisma.session.findUnique({
         where: {
-          session_token: sessionToken
+          session_token: sessionToken,
         },
         include: {
           user: true,
-        }
+        },
       })
 
-      if(!prismaSession) return null
-      
+      if (!prismaSession) return null
+
       const { user, ...session } = prismaSession
-      
+
       return {
         session: {
           userId: session.user_id,
@@ -155,10 +155,10 @@ export function PrismaAdapter(
         user: {
           id: user.id,
           name: user.name,
-          email: user.email,
+          email: user.email!,
           avatar_url: user.avatar_url!,
-          emailVerified: null
-        }
+          emailVerified: null,
+        },
       }
     },
 
@@ -170,7 +170,7 @@ export function PrismaAdapter(
         data: {
           user_id: userId,
           expires,
-        }
+        },
       })
 
       return {
@@ -183,8 +183,8 @@ export function PrismaAdapter(
     async deleteSession(sessionToken) {
       await prisma.session.delete({
         where: {
-          session_token: sessionToken
-        }
+          session_token: sessionToken,
+        },
       })
     },
   }
