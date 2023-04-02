@@ -50,5 +50,9 @@ export const LoginOption = styled('div', {
     border: 'none',
     backgroundColor: 'transparent',
     color: '$gray100',
-  }
+  },
+
+  '&:hover': {
+    backgroundColor: '$gray500',
+  },
 })

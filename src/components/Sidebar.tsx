@@ -6,6 +6,7 @@ import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { Binoculars } from "phosphor-react"
 import { signOut, useSession } from "next-auth/react"
+import { DialogLogin } from "./DialogLogin"
 
 
 const NAV_ITEMS = [
@@ -51,10 +52,8 @@ export const SideBar = () => {
           !user
           ?
           (
-            <span
-              onClick={() => router.push("/")}
-            >
-              Fazer login
+            <span>
+              <DialogLogin />
             </span>
           )
           :
