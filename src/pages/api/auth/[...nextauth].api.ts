@@ -45,8 +45,6 @@ export function buildNextAuthOptions(
           user,
         }
       },
-      
-
     }
   }
 }

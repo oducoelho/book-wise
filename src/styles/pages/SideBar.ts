@@ -31,9 +31,6 @@ export const Login = styled('div', {
     color: '$gray200',
     fontWeight: 700,
     cursor: "pointer",
-
-    display: "flex",
-    justifyContent: "space-between",
   }
 })
 
