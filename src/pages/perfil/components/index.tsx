@@ -1,13 +1,13 @@
 import { Content, PerfilContainer } from "@/styles/pages/Perfil";
-import { SideBar } from "../../components/Sidebar";
-import { MyBooks } from "./components/MyBooks";
+import { MyBooks } from "./MyBooks";
+import { Analytics } from "./Analytics";
 
 export default function Perfil() {
   return (
     <PerfilContainer>
-      <SideBar />
       <Content>
         <MyBooks />
+        <Analytics />
       </Content>
     </PerfilContainer>
   )

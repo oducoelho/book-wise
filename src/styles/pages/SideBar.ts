@@ -40,6 +40,7 @@ export const NavItemContainer = styled(Link, {
   transition: "0.2s",
   fontSize: '$md',
   fontWeight: 'bold',
+  color: '$gray200',
 
   svg: {
     marginRight: "12px"

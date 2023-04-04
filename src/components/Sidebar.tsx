@@ -1,7 +1,7 @@
 import { Avatar, Login, LoginContainer, NavItemContainer, Options, SideBarContainer } from "@/styles/pages/SideBar"
 import Image from "next/image"
 import Logo from '../assets/Logo.png' 
-import { ChartLineUp, SignOut } from "phosphor-react"
+import { ChartLineUp, SignOut, User } from "phosphor-react"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
 import { Binoculars } from "phosphor-react"
@@ -32,8 +32,16 @@ export const SideBar = () => {
   console.log(session)
 
   const navItems = useMemo(() => {
+    if (session) {
+      return NAV_ITEMS.concat({
+        label: 'Perfil',
+        href: `/perfil/${session.user.id}`,
+        icon: <User size={24} />
+      })
+    }
+
     return NAV_ITEMS;
-  }, [])
+  }, [session])
   return (
     <SideBarContainer>
       <div>

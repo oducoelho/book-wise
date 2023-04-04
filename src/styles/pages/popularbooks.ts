@@ -2,7 +2,6 @@ import { styled } from "..";
 
 export const PopularBooksContainer = styled('div', {
   marginTop: '106px',
-  paddingRight: '210px'
 })
 export const Header = styled('div', {
  display: 'flex',
