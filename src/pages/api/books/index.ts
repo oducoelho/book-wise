@@ -1,6 +1,7 @@
+import { prisma } from "@/lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { prisma } from "../../../../lib/prisma";
+import { buildNextAuthOptions } from "../auth/[...nextauth].api";
 
 export default async function handler(
   req: NextApiRequest,
@@ -32,7 +33,7 @@ export default async function handler(
 
   let userBooksIds: string[] = []
 
-  /*const session = await getServerSession(
+  const session = await getServerSession(
     req,
     res,
     buildNextAuthOptions(req, res),
@@ -50,7 +51,7 @@ export default async function handler(
     })
 
     userBooksIds = userBooks?.map(x => x?.id)
-  }*/
+  }
 
   const booksWithAvgRating = books.map((book) => {
     const bookAvgRating = booksAvgRating.find(avgRating => avgRating.book_id === book.id)

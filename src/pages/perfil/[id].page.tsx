@@ -37,7 +37,7 @@ export const ProfilePage: NextPageWithLayout = () => {
 
   return (
     <div>
-      {!!profile ? (
+      {profile?.user.name === '' ? (
           <h1>Carregando...</h1>
       ) : (
         <>
