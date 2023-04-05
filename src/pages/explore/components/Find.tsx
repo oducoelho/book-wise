@@ -1,8 +1,13 @@
 import { FindContainer, Form, Title } from '@/styles/pages/Find'
 import { Binoculars } from "phosphor-react"
 import { MagnifyingGlass } from "phosphor-react"
+import { InputHTMLAttributes, ReactNode } from 'react'
 
-export const Find = () => {
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  icon?: ReactNode
+}
+
+export const Find = ({ icon, ...props }: InputProps) => {
   return (
     <FindContainer>
       <Title>
@@ -10,10 +15,7 @@ export const Find = () => {
         <span>Explorar</span>
       </Title>
       <Form>
-        <input 
-          type="text" 
-          placeholder='Buscar livro ou autor' 
-        />
+        <input {...props} />
         <button>
           <MagnifyingGlass size={24}/>
         </button>

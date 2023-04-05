@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
-import { prisma } from "../../../../../lib/prisma";
+import { prisma } from "@/lib/prisma";
+import { buildNextAuthOptions } from "../../auth/[...nextauth].api";
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,9 +12,9 @@ export default async function handler(
   if(req.method !== "POST") return res.status(405).end()
   
   const session = await getServerSession(
-    // req,
-    // res,
-    //buildNextAuthOptions(req, res),
+     req,
+     res,
+    buildNextAuthOptions(req, res),
   )
 
   if (!session) return res.status(401).end()
@@ -38,7 +39,7 @@ export default async function handler(
 
   if(userAlreadyRated) {
     return res.status(400).json({
-      error: 'Ypu already rated this book'
+      error: 'You already rated this book'
     })
   }
 

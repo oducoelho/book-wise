@@ -1,6 +1,6 @@
 import { styled } from "..";
 
-export const BooksContainer = styled('div', {
+export const  BooksContainer = styled('div', {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
   gap: '20px',

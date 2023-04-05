@@ -4,6 +4,10 @@ import { api } from "@/lib/axios"
 import { Category } from "@prisma/client"
 import { useState } from "react"
 import { BooksContainer } from "@/styles/pages/Books"
+import { MagnifyingGlass } from "phosphor-react"
+import { Find } from "./Find"
+import { Tag } from "./Tag"
+
 export const ExploreBooks = () => {
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
@@ -19,7 +23,7 @@ export const ExploreBooks = () => {
         category: selectedCategory
       }
     });
-    return data?.books ?? []
+    return data.books ?? []
   })
 
   const filteredBooks = books?.filter((book) => {
@@ -28,31 +32,25 @@ export const ExploreBooks = () => {
 
   return (
     <BooksContainer>
+      <Find
+        placeholder="Buscar livro ou autor"
+        icon={<MagnifyingGlass size={20} />}
+        value={search}
+        onChange={({ target }) => setSearch(target.value)}
+      />
+
+      <Tag active={selectedCategory === null} onClick={() => setSelectedCategory(null)}>
+        Tudo
+      </Tag>
+      {categories?.map((category, i) => (
+        <Tag key={category?.id} active={selectedCategory === category.id} onClick={() => setSelectedCategory(category.id)}>
+          {category?.name}
+        </Tag>
+      ))}
+
       {filteredBooks?.map((book) => (
         <BookCard key={book.id} book={book} />
       ))}
-      {categories?.map((category, i) => (
-          <div>
-            {category?.name}
-          </div>
-      ))}
-
-      {/*<Card>
-        <Image 
-          src={Ilustração} 
-          alt="Capa" 
-          width={108}
-        />
-        <Informations>
-          <div>
-            <Title>O Hobbit</Title>
-            <SubTitle>J.R.R. Tolkien</SubTitle>
-          </div>
-          <div>
-            <Image src={Start} alt="" />  
-          </div>
-        </Informations>
-      </Card>*/}
     </BooksContainer>
   )
 }
