@@ -23,7 +23,7 @@ export const ExploreBooks = () => {
         category: selectedCategory
       }
     });
-    return data.books ?? []
+    return data?.books ?? []
   })
 
   const filteredBooks = books?.filter((book) => {

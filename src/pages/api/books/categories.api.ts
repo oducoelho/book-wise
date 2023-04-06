@@ -9,5 +9,5 @@ export default async function handler(
 
   const categories = await prisma.category.findMany()
 
-  return res.json({ categories})
+  return res.json({ categories })
 }

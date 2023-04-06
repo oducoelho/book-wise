@@ -1,8 +1,9 @@
-import { PrismaClient } from "@prisma/client"
-import { books } from "./constants/books"
-import { users } from "./constants/users"
-import { categories } from "./constants/categories"
-import { ratings } from "./constants/ratings"
+import { PrismaClient } from '@prisma/client'
+import { books } from './constants/books'
+import { categories } from './constants/categories'
+import { ratings } from './constants/ratings'
+import { users } from './constants/users'
+
 const prisma = new PrismaClient()
 
 async function main() {
@@ -48,13 +49,13 @@ async function main() {
                 category: {
                   connect: {
                     id: category.id,
-                  }
-                }
+                  },
+                },
               }
-            })
-          ]
-        }
-      }
+            }),
+          ],
+        },
+      },
     })
   })
 
@@ -74,7 +75,6 @@ async function main() {
     })
   })
 
-
   await prisma.$transaction([
     ...categoriesSeed,
     ...booksSeed,
@@ -88,7 +88,7 @@ main()
     await prisma.$disconnect()
   })
   .catch(async (e) => {
-    console.log(e)
+    console.error(e)
     await prisma.$disconnect()
     process.exit(1)
   })
