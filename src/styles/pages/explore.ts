@@ -9,7 +9,7 @@ export const ExploreContainer = styled('div', {
 export const Content = styled('div', {
   width: "100%",
   height: "100vh",
-  maxWidth: "996px",
+  maxWidth: "1200px",
   margin: "0 auto",
   paddingTop: 72,
 })

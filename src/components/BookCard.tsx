@@ -21,6 +21,7 @@ export const BookCard = ({ book }: BookCardProps) => {
           src={book.cover_url} 
           alt="Capa" 
           width={108}
+          height={152}
         />
         <Informations>
           <div>
@@ -30,9 +31,6 @@ export const BookCard = ({ book }: BookCardProps) => {
             <SubTitle>
               {book.author}
             </SubTitle>
-          </div>
-          <div>
-            {/*<Image src={Start} alt="" />*/}  
           </div>
         </Informations>
       </Card>

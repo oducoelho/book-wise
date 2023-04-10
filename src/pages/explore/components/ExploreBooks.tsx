@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query"
 import { api } from "@/lib/axios"
 import { Category } from "@prisma/client"
 import { useState } from "react"
-import { BooksContainer } from "@/styles/pages/Books"
+import { BooksContainer, BooksGrid, TagsContainer } from "@/styles/pages/Books"
 import { MagnifyingGlass } from "phosphor-react"
 import { Find } from "./Find"
 import { Tag } from "./Tag"
@@ -39,18 +39,22 @@ export const ExploreBooks = () => {
         onChange={({ target }) => setSearch(target.value)}
       />
 
-      <Tag active={selectedCategory === null} onClick={() => setSelectedCategory(null)}>
-        Tudo
-      </Tag>
-      {categories?.map((category, i) => (
-        <Tag key={category?.id} active={selectedCategory === category.id} onClick={() => setSelectedCategory(category.id)}>
-          {category?.name}
+      <TagsContainer>
+        <Tag active={selectedCategory === null} onClick={() => setSelectedCategory(null)}>
+          Tudo
         </Tag>
-      ))}
+        {categories?.map((category, i) => (
+          <Tag key={category?.id} active={selectedCategory === category.id} onClick={() => setSelectedCategory(category.id)}>
+            {category?.name}
+          </Tag>
+        ))}
+      </TagsContainer>
 
-      {filteredBooks?.map((book) => (
-        <BookCard key={book.id} book={book} />
-      ))}
+      <BooksGrid>
+        {filteredBooks?.map((book) => (
+          <BookCard key={book.id} book={book} />
+        ))}
+      </BooksGrid>
     </BooksContainer>
   )
 }

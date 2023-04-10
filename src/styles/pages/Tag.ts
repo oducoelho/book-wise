@@ -9,9 +9,11 @@ export const Container = styled('div',{
   background: "none",
   color: "$purple100",
   border: "1px solid $purple100",
-  padding: "$1 $4",
-  borderRadius: "$full",
+  padding: "5px 10px",
+  borderRadius: 8,
   transition: "0.2s",
+  cursor: "pointer",
+  fontSize: "$ss",
 
   "&:hover": {
     color: "$gray100",
