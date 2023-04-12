@@ -1,19 +1,21 @@
-import { ReactNode, useEffect, useState } from 'react'
 import * as Dialog from '@radix-ui/react-dialog';
+import { ReactNode, useEffect, useState } from 'react'
 import { BookContent, BookDetailsContainer, BookDetailsWrapper, BookImage, BookInfos, DialogClose, DialogContent, DialogOverlay } from '@/styles/pages/RatingsDialog';
 import { BookOpen, BookmarkSimple, X } from 'phosphor-react';
-import { useRouter } from 'next/router';
+import { RatingStars } from '@/pages/initialPage/components/PopularBooks/RatingStars';
+import { BookInfo } from './BookInfo';
+import { BookWithAvgRating } from '../BookCard';
 import { useQuery } from '@tanstack/react-query';
 import { api } from '@/lib/axios';
-import { BookWithAvgRating } from '../BookCard';
 import { CategoriesOnBooks, Category } from '@prisma/client';
-import { BookInfo } from './BookInfo';
+import { RatingWithAuthor } from '../UserRatingCard';
+import { useRouter } from 'next/router';
 
 type BookDetails = BookWithAvgRating & {
   ratings: RatingWithAuthor[]
   categories: (CategoriesOnBooks & {
-    category: Category
-  })[]
+    category: Category;
+  })[];
 }
 
 type RatingsDialogProps = {
@@ -22,7 +24,7 @@ type RatingsDialogProps = {
 }
 
 export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
-  const [ open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
   const router = useRouter()
   const paramBookId = router.query.book as string
@@ -34,12 +36,12 @@ export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
   }, [bookId, paramBookId])
 
   const { data: book } = useQuery<BookDetails>(['book', bookId], async () => {
-    const { data } = await api.get(`/books/details/${bookId}`)
-    return data.book ?? {}
+    const { data } = await api.get(`/books/details/${bookId}`);
+    return data?.book ?? {}
   }, {
     enabled: open
   })
-
+  
   const ratingsLength = book?.ratings.length ?? 0
 
   const categories = book?.categories.map(x => x.category.name)?.join(", ") ?? ""
@@ -80,6 +82,7 @@ export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
                         <p>{book?.author}</p>
                       </div>
                       <div>
+                        <RatingStars rating={book.avgRating} size="md" />
                         <p>{ratingsLength} {ratingsLength === 1 ? "avaliação" : "avaliações"}</p>
                       </div>
                     </BookContent>

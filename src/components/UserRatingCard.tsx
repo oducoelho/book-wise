@@ -1,9 +1,10 @@
-
-import { Container, UserDetains } from '@/styles/pages/UserRatingCard'
+import { getRelativeTimeString } from '@/utils/getRelativeTimeString'
 import { Rating, User } from '@prisma/client'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
-import React from 'react'
+import { RatingStars } from '@/pages/initialPage/components/PopularBooks/RatingStars'
+import { Container, UserDetains } from '@/styles/pages/UserRatingCard'
+import Image from 'next/image'
 
 export type RatingWithAuthor = Rating & {
   user: User
@@ -24,14 +25,18 @@ export const UserRatingCard = ({ rating }: UserRatingCardProps) => {
       <UserDetains>
         <section>
           <Link href={`/profile${rating.user_id}`}>
+            <Image src={rating.user.avatar_url!} alt={rating.user.name}/>
           </Link>
           <div>
             <h1>{rating.user.name}</h1>
             <p>{distance}</p>
           </div>
         </section>
+
+        <RatingStars rating={rating.rate}/>
       </UserDetains>
-      <p></p>
+
+      <p>{rating.description}</p>
     </Container>
   )
 }
