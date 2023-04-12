@@ -1,6 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { ReactNode, useEffect, useState } from 'react'
-import { BookContent, BookDetailsContainer, BookDetailsWrapper, BookImage, BookInfos, DialogClose, DialogContent, DialogOverlay } from '@/styles/pages/RatingsDialog';
+import { Assessments, BookAuthor, BookContent, BookDetailsContainer, BookDetailsWrapper, BookImage, BookInfos, BookName, DialogClose, DialogContent, DialogOverlay } from '@/styles/pages/RatingsDialog';
 import { BookOpen, BookmarkSimple, X } from 'phosphor-react';
 import { RatingStars } from '@/pages/initialPage/components/PopularBooks/RatingStars';
 import { BookInfo } from './BookInfo';
@@ -78,12 +78,12 @@ export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
                   <BookImage width={171} height={242} alt={book.name} src={book.cover_url} />
                     <BookContent>
                       <div>
-                        <h1>{book.name}</h1>
-                        <p>{book?.author}</p>
+                        <BookName>{book.name}</BookName>
+                        <BookAuthor>{book?.author}</BookAuthor>
                       </div>
                       <div>
                         <RatingStars rating={book.avgRating} size="md" />
-                        <p>{ratingsLength} {ratingsLength === 1 ? "avaliação" : "avaliações"}</p>
+                        <Assessments>{ratingsLength} {ratingsLength === 1 ? "avaliação" : "avaliações"}</Assessments>
                       </div>
                     </BookContent>
                 </BookDetailsContainer>

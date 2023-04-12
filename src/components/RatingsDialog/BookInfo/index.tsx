@@ -1,4 +1,4 @@
-import { Container } from "@/styles/pages/BookInfo"
+import { Container, Info, Title } from "@/styles/pages/BookInfo"
 import { ReactNode } from "react"
 
 type BoookIngoProps = {
@@ -12,8 +12,8 @@ export const BookInfo = ({ icon, title, info  }: BoookIngoProps) => {
     <Container>
       {icon}
       <div>
-        <h1>{title}</h1>
-        <p>{info}</p>
+        <Title>{title}</Title>
+        <Info>{info}</Info>
       </div>
     </Container>
   )

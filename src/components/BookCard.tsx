@@ -2,6 +2,7 @@ import { Book } from "@prisma/client"
 import Image from "next/image"
 import { BooksContainer, Card, Informations, SubTitle, Title } from "@/styles/pages/BookCard"
 import { RatingsDialog } from "./RatingsDialog/RatingsDialog"
+import { RatingStars } from "@/pages/initialPage/components/PopularBooks/RatingStars"
 
 export type BookWithAvgRating = Book & {
   avgRating: number
@@ -34,6 +35,8 @@ export const BookCard = ({ book }: BookCardProps) => {
                   {book.author}
                 </SubTitle>
               </div>
+              
+              <RatingStars rating={book.avgRating} />
             </Informations>
           </Card>
       </BooksContainer>

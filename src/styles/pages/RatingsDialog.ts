@@ -7,7 +7,6 @@ export const DialogOverlay = styled(Dialog.Overlay, {
   inset: 0,
   background: "#00000099"
 })
-
 export const DialogContent = styled(Dialog.Content, {
   position: 'fixed',
   top: 0,
@@ -16,7 +15,7 @@ export const DialogContent = styled(Dialog.Content, {
   height: "100%",
   background: "$gray800",
   boxShadow: "-4px 0px 30px 0px #00000080",
-  padding: "$6 48px",
+  padding: "24px 48px",
   display: "flex",
   flexDirection: "column",
   overflowY: "auto",
@@ -33,32 +32,29 @@ export const DialogContent = styled(Dialog.Content, {
     background: "$gray600"
   }
 })
-
 export const DialogClose = styled(Dialog.Close, {
   color: "$gray400",
   background: "transparent",
   border: "none",
   marginLeft: "auto",
-  marginBottom: "$4",
+  marginBottom: "16px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 })
-
 export const BookDetailsWrapper = styled("div", {
   display: "flex",
   flexDirection: "column",
   background: "$gray700",
-  padding: "$6 $8",
-  borderRadius: "$md",
+  padding: "24px 32px",
+  borderRadius: "16px",
 })
-
 export const BookDetailsContainer = styled("div", {
   display: "flex",
-  gap: "$8"
+  gap: "32px"
 })
 export const BookImage = styled(Image, {
-  borderRadius: "$md",
+  borderRadius: "16px",
   objectFit: "cover",
   minWidth: 171
 })
@@ -73,4 +69,19 @@ export const BookInfos = styled("div", {
   borderTop: "1px solid $gray600",
   display: "flex",
   gap: 60
+})
+export const BookName = styled("div", {
+  fontSize: "18px",
+  color: "$gray100",
+  fontWeight: 'bold'
+})
+export const BookAuthor = styled("div", {
+  color: '$gray300',
+  marginTop: '8px',
+  fontSize: "15px",
+})
+export const Assessments = styled("div", {
+  color: '$gray400',
+  marginTop: '8px',
+  fontSize: "12px",
 })
