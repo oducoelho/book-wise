@@ -8,12 +8,12 @@ export const BooksContainer = styled('div', {
   marginTop: '20px',
 })
 export const Card = styled('div', {
-  display: 'flex',
-
+  display: 'flex',  
   backgroundColor: '$gray700',
   padding: '20px',
   width: '318px',
   borderRadius: 8,
+  cursor: "pointer",
 })
 export const Informations = styled('div', {
   display: 'flex',

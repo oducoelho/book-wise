@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { RatingStars } from '@/pages/initialPage/components/PopularBooks/RatingStars'
 import { Container, UserDetains } from '@/styles/pages/UserRatingCard'
-import Image from 'next/image'
+import { Avatar } from '@/styles/pages/LoginDialog'
 
 export type RatingWithAuthor = Rating & {
   user: User
@@ -25,7 +25,7 @@ export const UserRatingCard = ({ rating }: UserRatingCardProps) => {
       <UserDetains>
         <section>
           <Link href={`/profile${rating.user_id}`}>
-            <Image src={rating.user.avatar_url!} alt={rating.user.name}/>
+            <Avatar src={rating.user.avatar_url!} alt={rating.user.name}/>
           </Link>
           <div>
             <h1>{rating.user.name}</h1>

@@ -10,6 +10,7 @@ import { api } from '@/lib/axios';
 import { CategoriesOnBooks, Category } from '@prisma/client';
 import { RatingWithAuthor } from '../UserRatingCard';
 import { useRouter } from 'next/router';
+import { BooksRatings } from '../BooksRatings';
 
 type BookDetails = BookWithAvgRating & {
   ratings: RatingWithAuthor[]
@@ -92,6 +93,8 @@ export const RatingsDialog = ({ bookId, children }: RatingsDialogProps) => {
                   <BookInfo icon={<BookOpen />} title="Páginas" info={String(book.total_pages)} />
                 </BookInfos>
               </BookDetailsWrapper>
+
+              <BooksRatings bookId={bookId} ratings={book.ratings} />
             </>
           )
         }

@@ -1,12 +1,13 @@
-import { Avatar, Login, LoginContainer, NavItemContainer, Options, SideBarContainer } from "@/styles/pages/SideBar"
+import { Login, NavItemContainer, Options, SideBarContainer } from "@/styles/pages/SideBar"
 import Image from "next/image"
 import Logo from '../assets/Logo.png' 
-import { ChartLineUp, SignOut, User } from "phosphor-react"
+import { ChartLineUp, User } from "phosphor-react"
 import { useRouter } from "next/router"
-import { useMemo } from "react"
+import { Fragment, useMemo } from "react"
 import { Binoculars } from "phosphor-react"
-import { signOut, useSession } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import { DialogLogin } from "./DialogLogin"
+import { LoginDialog } from "./LoginDialog"
 
 
 const NAV_ITEMS = [
@@ -23,8 +24,10 @@ const NAV_ITEMS = [
 ]
 
 export const SideBar = () => {
-  const { data: session } = useSession();
+  const { status, data: session } = useSession();
   const router = useRouter();
+
+  const isAuthenticated = status === "authenticated"
 
   const user = session?.user;
 
@@ -42,6 +45,8 @@ export const SideBar = () => {
 
     return NAV_ITEMS;
   }, [session])
+
+  const RatingWrapper = isAuthenticated ? Fragment : DialogLogin
   return (
     <SideBarContainer>
       <div>
@@ -61,22 +66,14 @@ export const SideBar = () => {
           ?
           (
             <span>
-              <DialogLogin />
+              <RatingWrapper>
+                <h3>Login</h3>
+              </RatingWrapper>
             </span>
           )
           :
           (
-            <LoginContainer>
-              <div>
-                <Avatar src={user.avatar_url} alt={user.name} width={80} height={80}/>
-              </div>
-              <span>
-                {user.name}
-              </span>
-              <div>
-                <SignOut color="#F75A68" size={20} onClick={() => signOut()} />
-              </div>
-            </LoginContainer>
+            <LoginDialog />
           )
         }
       </Login>

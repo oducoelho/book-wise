@@ -13,12 +13,17 @@ import {
   Login, 
   LoginOption 
 } from '@/styles/pages/DialogLogin';
+import { ReactNode } from 'react';
 
-export const DialogLogin = () => {
+type LoginDialogProps = {
+  children: ReactNode
+}
+
+export const DialogLogin = ({ children }: LoginDialogProps) => {
   return (
     <Dialog.Root>
     <Dialog.Trigger asChild>
-      <Button>Login</Button>
+      <Button>{children}</Button>
     </Dialog.Trigger>
     <Dialog.Portal>
       <DialogOverlay />
