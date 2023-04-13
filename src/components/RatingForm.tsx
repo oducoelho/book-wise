@@ -31,7 +31,7 @@ export const RatingForm = ({ bookId, onCancel }: RatingFormProps) => {
   }, {
     onSuccess: () => {
       queryClient.invalidateQueries(['book', bookId])
-      queryClient.invalidateQueries(['book'])
+      queryClient.invalidateQueries(['books'])
       onCancel() 
     }
   })

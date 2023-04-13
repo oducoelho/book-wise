@@ -1,6 +1,6 @@
 import { styled } from "..";
 
-export const Container = styled('div', {
+export const Container = styled('button', {
   width: 40,
   height: 40,
   borderRadius: 4,
@@ -10,6 +10,7 @@ export const Container = styled('div', {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  cursor: "pointer",
 
   svg: {
     width: 24,
