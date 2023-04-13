@@ -31,7 +31,6 @@ export const Post = styled('div', {
   borderRadius: 8,
   padding: '20px',
   width: '80%',
-  marginRight: '-800px',
   marginTop: '10px',
 })
 export const User = styled('div', {

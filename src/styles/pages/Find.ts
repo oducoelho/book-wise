@@ -33,6 +33,10 @@ export const Form = styled('form', {
     backgroundColor: '$background',
     marginRight: '200px',
     color: '$white',
+    
+    "&:focus": {
+      outline: "none"
+    }
   },
   button: {
     border: 'none',

@@ -83,6 +83,11 @@ export const Form = styled('div', {
     border: 'none',
     backgroundColor: '$background',
     color: '$white',
+
+    
+    "&:focus": {
+      outline: "none"
+    }
   },
   button: {
     border: 'none',
