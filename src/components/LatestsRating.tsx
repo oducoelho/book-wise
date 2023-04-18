@@ -7,6 +7,11 @@ import { Link } from "./Link"
 import { Complet } from "./RatingCard/Complet"
 
 export const LatestsRating = () => {
+  const { data: ratings } = useQuery<RatingWithAuthorAndBook[]>(["latest-ratings"], async () => {
+    const { data } = await api.get("/ratings/latest")
+    return data?.ratings ?? []
+  })
+  
   const { data: session } = useSession()
 
   const userId = session?.user.id 
@@ -34,9 +39,9 @@ export const LatestsRating = () => {
       <span>Avaliações mais recentes</span>
 
       <section>
-        {/*ratings?.map(rating => (
-          <Complet key={rating.id} />
-        ))*/}
+        {ratings?.map(rating => (
+          <Complet key={rating.id} rating={rating} />
+        ))}
       </section>
     </Container>
   )

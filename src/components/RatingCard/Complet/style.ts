@@ -8,7 +8,7 @@ export const Post = styled('div', {
   width: '80%',
   marginTop: '10px',
 })
-export const User = styled('div', {
+export const Usuario = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
   div: {

@@ -1,29 +1,52 @@
 import Image from 'next/image'
-import { Container, Content, Picture, Post, Resume, Stars, User } from './style'
+import { Container, Content, Picture, Post, Resume, Stars, Usuario } from './style'
 import React from 'react'
+import { Book, Rating, User } from '@prisma/client'
+import { getRelativeTimeString } from '@/utils/getRelativeTimeString'
+import { useToggleShowMore } from '@/hooks/useToggleShowMore'
+import { RatingStars } from '@/pages/initialPage/components/PopularBooks/RatingStars'
+import { Avatar } from '@/styles/pages/LoginDialog'
 
-export const Complet = () => {
+export type RatingWithAuthorAndBook = Rating & {
+  user: User
+  book: Book
+}
+
+type RatingCardProps = {
+  rating: RatingWithAuthorAndBook
+  variant?: "default" | "compact"
+}
+
+const MAX_SUMMARY_LENGTH = 180
+
+
+export const Complet = ({ rating }: RatingCardProps) => {
+  const distance = getRelativeTimeString(new Date(rating.created_at), "pt-BR")
+
+  const { text: bookSummary, toggleShowMore, isShowingMore } = useToggleShowMore(rating.book.summary, MAX_SUMMARY_LENGTH)
+
   return (
     <Container>
       <Post>
-        <User>
+        <Usuario>
           <div>
-            <Image src={Avatar} alt="" />
+            <Avatar src={rating?.user?.avatar_url!} alt="" />
             <div>
-              <span>Jaxson Dias</span>
-              <strong>Hoje</strong>
+              <span>{rating.user.name}</span>
+              <strong>{distance}</strong>
             </div>
           </div>
           <Stars>
-            <Image src={Rating} alt="" />
+            <RatingStars rating={rating.rate} />
           </Stars>
-        </User>
+        </Usuario>
         <Content>
           <Picture>
             <Image
-              src={BookPoster}
+              src={rating.book.cover_url}
               alt=""
-              width={150}
+              width={108}
+              height={152}
             />
           </Picture>
           <Resume>

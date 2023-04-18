@@ -5,7 +5,7 @@ export const Container = styled(Link, {
   display: "flex",
   alignItems: "center",
   fontWeight: "$bold",
-  fontSize: "1rem",
+  fontSize: "1.5rem",
   gap: "0.5rem",
   textDecoration: "none",
   padding: "0.5rem 0.75rem",

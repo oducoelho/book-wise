@@ -13,13 +13,14 @@ export const PopularBooksContainer = styled('div', {
   }
 })
 export const Header = styled('div', {
- display: 'flex',
- justifyContent: 'space-between',
-paddingLeft: '50px',
+  display: 'flex',
+  justifyContent: 'space-between',
+  paddingLeft: '50px',
   span: {
     fontSize: '$sm',
     color: '$gray100',
     paddingTop: '50px',
+    marginTop: '5px'
   },
   p: {
     color: '$purple100',
