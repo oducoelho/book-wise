@@ -6,6 +6,7 @@ import { getRelativeTimeString } from '@/utils/getRelativeTimeString'
 import { useToggleShowMore } from '@/hooks/useToggleShowMore'
 import { RatingStars } from '@/pages/initialPage/components/PopularBooks/RatingStars'
 import { Avatar } from '@/styles/pages/LoginDialog'
+import { ToggleShowMoreButton } from '../Compact/style'
 
 export type RatingWithAuthorAndBook = Rating & {
   user: User
@@ -17,7 +18,7 @@ type RatingCardProps = {
   variant?: "default" | "compact"
 }
 
-const MAX_SUMMARY_LENGTH = 180
+const MAX_SUMMARY_LENGTH = 160
 
 
 export const Complet = ({ rating }: RatingCardProps) => {
@@ -36,9 +37,7 @@ export const Complet = ({ rating }: RatingCardProps) => {
               <strong>{distance}</strong>
             </div>
           </div>
-          <Stars>
-            <RatingStars rating={rating.rate} />
-          </Stars>
+          <RatingStars rating={rating.rate} />
         </Usuario>
         <Content>
           <Picture>
@@ -50,10 +49,15 @@ export const Complet = ({ rating }: RatingCardProps) => {
             />
           </Picture>
           <Resume>
-            <h1>O Hobbit</h1>
-            <p>J.R.R Tolkien</p>
+            <h1>{rating.book.name}</h1>
+            <p>{rating.book.author}</p>
             <span>
-              Semper et sapien proin vitae nisi. Feugiat neque integer donec et aenean posuere amet ultrices. Cras fermentum id pulvinar varius leo a in. Amet libero pharetra nunc elementum fringilla velit ipsum. Sed vulputate massa velit nibh... ver mais
+              {bookSummary}
+              {rating.book.summary.length > MAX_SUMMARY_LENGTH && (
+                <ToggleShowMoreButton onClick={toggleShowMore}>
+                  {isShowingMore ? 'Ver menos' : 'Ver mais'}
+                </ToggleShowMoreButton>
+              )}
             </span>
           </Resume>
         </Content>

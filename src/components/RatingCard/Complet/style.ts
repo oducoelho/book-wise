@@ -4,7 +4,7 @@ export const Container = styled("div", {})
 export const Post = styled('div', {
   backgroundColor: '$gray700',
   borderRadius: 8,
-  padding: '20px',
+  padding: '15px',
   width: '80%',
   marginTop: '10px',
 })
@@ -15,8 +15,8 @@ export const Usuario = styled('div', {
     display: 'flex',
     div: {
       display: 'flex',
-      justifyContent: 'center',
-      paddingLeft: '20px',
+      justifyContent: 'flex-start',
+      padding: '2px 0px 0px 20px',
       flexDirection: 'column',
       span: {
         color: '$gray100',
@@ -30,7 +30,8 @@ export const Usuario = styled('div', {
     }
   }
 })
-export const Stars  = styled('div', {})
+export const Stars  = styled('div', {
+})
 export const Content = styled('div', {
   display: 'flex',
   paddingTop: '20px',
