@@ -11,6 +11,5 @@ export const Content = styled('div', {
   height: "100vh",
   maxWidth: "996px",
   margin: "0 auto",
-  paddingLeft: '100px',
   display: "flex",
 })

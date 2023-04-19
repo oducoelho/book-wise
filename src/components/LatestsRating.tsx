@@ -1,4 +1,4 @@
-import { Container, LatestContainer } from "@/styles/pages/LatestsRating"
+import { Container, LatestContainer, Title } from "@/styles/pages/LatestsRating"
 import { useSession } from "next-auth/react"
 import { Compact, RatingWithAuthorAndBook } from "./RatingCard/Compact"
 import { useQuery } from "@tanstack/react-query"
@@ -36,7 +36,7 @@ export const LatestsRating = () => {
         </LatestContainer>
       )}
 
-      <span>Avaliações mais recentes</span>
+      <Title>Avaliações mais recentes</Title>
 
       <section>
         {ratings?.map(rating => (

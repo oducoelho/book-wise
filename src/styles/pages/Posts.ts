@@ -2,7 +2,6 @@ import { styled } from "..";
 
 export const PostContainer = styled('div', {
   marginTop: '60px',
-  marginLeft: '-130px',
 })
 export const Header = styled('div', {
   display: 'flex',

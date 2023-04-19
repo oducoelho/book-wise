@@ -18,7 +18,7 @@ type RatingCardProps = {
   variant?: "default" | "compact"
 }
 
-const MAX_SUMMARY_LENGTH = 160
+const MAX_SUMMARY_LENGTH = 150
 
 
 export const Complet = ({ rating }: RatingCardProps) => {
