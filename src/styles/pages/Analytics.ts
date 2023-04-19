@@ -1,7 +1,7 @@
 import { styled } from "..";
 
 export const AnalyticsContainer = styled('div', {
-  marginTop: '106px',
+  marginTop: '35px',
   marginLeft: '100px'
 })
 export const Header = styled('section', {

@@ -5,8 +5,8 @@ import { NextPageWithLayout } from "../_app.page"
 import { useRouter } from "next/router"
 import { ReactElement } from "react"
 import { DefaultLayout } from "@/layouts/DefaultLayout"
-import { PerfilContainer, Content } from "@/styles/pages/Perfil"
-import { MyBooks } from "./components/MyBooks"
+import { PerfilContainer, Content, ProfilePageContainer } from "@/styles/pages/Perfil"
+import { MyBooks, ProfileRating } from "./components/MyBooks"
 import { Analytics } from "./components/Analytics"
 
 export type ProfileData  = {
@@ -32,26 +32,27 @@ export const ProfilePage: NextPageWithLayout = () => {
 
   const { data: profile } = useQuery<ProfileData>(["profile", userId], async () => {
     const { data } = await api.get(`/perfil/${userId}`)
+    console.log(data)
     return data?.profile ?? {}
   }, {
     enabled: !!userId
   })
 
   return (
-    <div>
-      {profile?.user.name === '' ? (
-          <h1>Carregando...</h1>
-      ) : (
+    <ProfilePageContainer>
+      {!!profile? (
         <>
         <PerfilContainer>
           <Content>
-            <MyBooks />
+            <MyBooks isOwnProfile={isOwnProfile} ratings={profile?.ratings} />
             <Analytics profile={profile} key={profile?.user.name}/>
           </Content>
         </PerfilContainer>
         </>
+      ) : (
+        <h1>Carregando...</h1>
       )}
-    </div>
+    </ProfilePageContainer>
   )
 
 }

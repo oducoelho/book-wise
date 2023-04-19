@@ -1,5 +1,12 @@
 import { styled } from "..";
 
+export const ProfilePageContainer = styled('div', {
+  h1: {
+    color: '$gray100',
+    fontSize: '$lg',
+    minWidth: '624px',
+  }
+})
 export const PerfilContainer = styled('div', {
   width: "100%",
   height: "100vh",

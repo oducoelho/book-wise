@@ -7,6 +7,7 @@ type ProfileDetailsProps = {
 }
 
 export const Analytics = ({ profile }: ProfileDetailsProps) => {
+  console.log(profile)
   const memberSinceYear = new Date(profile.user.member_since).getFullYear();
 
   return (
