@@ -11,10 +11,20 @@ export type BookWithAvgRating = Book & {
 
 type BookCardProps = {
   book: BookWithAvgRating
+  size?: "md" | "lg"
 }
 
-export const BookCard = ({ book }: BookCardProps) => {
-  
+export const BookCard = ({ book, size = "md"}: BookCardProps) => {
+  const IMAGE_SIZES = {
+    md: {
+      width: 64,
+      height: 94,
+    },
+    lg: {
+      width: 108,
+      height: 152,
+    },
+  }
   
   return (
     <RatingsDialog bookId={book?.id}>
@@ -23,8 +33,8 @@ export const BookCard = ({ book }: BookCardProps) => {
             <Image
             src={book.cover_url} 
             alt="Capa" 
-            width={108}
-            height={152}
+            width={IMAGE_SIZES[size].width} 
+            height={IMAGE_SIZES[size].height}
             />
             <Informations>
               <div>

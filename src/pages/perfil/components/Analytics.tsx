@@ -1,30 +1,32 @@
 import { AnalyticsContainer, Avatar, Border, Content, Header, Informations } from '@/styles/pages/Analytics'
-import { useSession } from 'next-auth/react';
 import { BookOpen, BookmarkSimple, Books, UserList } from 'phosphor-react';
-import React from 'react'
+import { ProfileData } from '../[id].page';
 
-export const Analytics = () => {
-  const { data: session } = useSession();
-  const user = session?.user;
+type ProfileDetailsProps = {
+  profile: ProfileData
+}
+
+export const Analytics = ({ profile }: ProfileDetailsProps) => {
+  const memberSinceYear = new Date(profile.user.member_since).getFullYear();
 
   return (
     <AnalyticsContainer>
       <Border>
         <Header>
           <div>
-            <Avatar src={user?.avatar_url} alt={user?.name} width={80} height={80}/>
+            <Avatar src={profile.user.avatar_url} alt={profile.user.name} width={80} height={80}/>
             <span>
-              {user?.name}
+              {profile.user.name}
             </span>
           </div>
-          <span>membro desde 2023</span>
+          <span>{memberSinceYear}</span>
         </Header>
 
         <Content>
           <Informations>
             <BookOpen size={40} />
             <div>
-              <span>3853</span>
+              <span>{profile.readPages}</span>
               <p>Pagínas lidas</p>
             </div>
           </Informations>
@@ -32,7 +34,7 @@ export const Analytics = () => {
           <Informations>
             <Books size={40} />
             <div>
-              <span>10</span>
+              <span>{profile.ratedBooks}</span>
               <p>Livros avaliados</p>
             </div>
           </Informations>
@@ -40,7 +42,7 @@ export const Analytics = () => {
           <Informations>
             <UserList size={40} />
             <div>
-              <span>8</span>
+              <span>{profile.readAuthors}</span>
               <p>Autores lidos</p>
             </div>
           </Informations>
@@ -48,7 +50,7 @@ export const Analytics = () => {
           <Informations>
             <BookmarkSimple size={40} />
             <div>
-              <span>Computação</span>
+              <span>{profile.mostReadCategory}</span>
               <p>Categoria mais lida</p>
             </div>
           </Informations>

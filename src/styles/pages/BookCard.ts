@@ -25,6 +25,12 @@ export const Informations = styled('div', {
 export const Title = styled('div', {
   fontSize: '20px',
   color: '$gray100',
+      flex: 1,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: '-webkit-box',
+    '-webkit-box-orient': 'vertical',
+    '-webkit-line-clamp': 2,
 })
 export const SubTitle = styled('div', {
   fontSize: '12px',

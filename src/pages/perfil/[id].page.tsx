@@ -3,12 +3,14 @@ import { useQuery } from "@tanstack/react-query"
 import { useSession } from "next-auth/react"
 import { NextPageWithLayout } from "../_app.page"
 import { useRouter } from "next/router"
-import Perfil from "./components"
 import { ReactElement } from "react"
 import { DefaultLayout } from "@/layouts/DefaultLayout"
+import { PerfilContainer, Content } from "@/styles/pages/Perfil"
+import { MyBooks } from "./components/MyBooks"
+import { Analytics } from "./components/Analytics"
 
 export type ProfileData  = {
-  //ratings: ProfileRating[]
+  ratings: ProfileRating[]
   user: {
     avatar_url: string
     name: string
@@ -41,7 +43,12 @@ export const ProfilePage: NextPageWithLayout = () => {
           <h1>Carregando...</h1>
       ) : (
         <>
-          <Perfil />
+        <PerfilContainer>
+          <Content>
+            <MyBooks />
+            <Analytics profile={profile} key={profile?.user.name}/>
+          </Content>
+        </PerfilContainer>
         </>
       )}
     </div>

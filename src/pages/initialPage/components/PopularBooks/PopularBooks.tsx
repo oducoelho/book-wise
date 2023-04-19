@@ -20,7 +20,7 @@ export const PopularBooks = () => {
     </Header>
     <section>
       {popularBooks?.map(book => (
-          <BookCard key={`popular-${book.id}`} book={book} />
+          <BookCard key={`popular-${book.id}`} book={book} size="md" />
       ))}
     </section>
   </PopularBooksContainer>

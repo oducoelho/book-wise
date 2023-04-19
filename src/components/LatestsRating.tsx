@@ -29,7 +29,7 @@ export const LatestsRating = () => {
         <LatestContainer>
           <header>
             <p>Sua última leitura</p>
-            <Link text="Ver Todas" href={`/profile/${userId}`} />
+            <Link text="Ver Todas" href={`/perfil/${userId}`} />
           </header>
 
           <Compact rating={latestUserRating}/>

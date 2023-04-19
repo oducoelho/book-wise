@@ -52,7 +52,7 @@ export const ExploreBooks = () => {
 
       <BooksGrid>
         {filteredBooks?.map((book) => (
-          <BookCard key={book.id} book={book} />
+          <BookCard key={book.id} book={book} size="lg"/>
         ))}
       </BooksGrid>
     </BooksContainer>
