@@ -13,6 +13,13 @@ export const SideBarContainer = styled('aside', {
   justifyContent: 'space-between',
   padding: '30px 0px',
   alignItems: 'center',
+
+  '@media (max-width: 994px)': {
+    display: 'block',
+    left: '1rem',
+    cursor: 'pointer',
+    background: "none",
+  }
 })
 
 export const Options = styled('div', {
@@ -24,8 +31,6 @@ export const Options = styled('div', {
 })
 
 export const Login = styled('div', {
-
-
   span: {
     fontSize: '$sm',
     color: '$gray200',
@@ -74,4 +79,35 @@ export const NavItemContainer = styled(Link, {
       }
     }
   }
+})
+
+export const MobileIcon = styled('div', {
+  display: 'none',
+  cursor: 'pointer',
+  paddingRight: '16px',
+  zIndex: 10,
+  color: '$gray100',
+
+  '@media (max-width: 994px)': {
+    display: 'block',
+    left: '1rem',
+    cursor: 'pointer',
+  }
+})
+export const WebVersion = styled('div', {
+  display: 'none',
+  cursor: 'pointer',
+  paddingRight: '16px',
+  zIndex: 10,
+  color: '$gray100',
+
+  '@media (max-width: 1024px)': {
+    display: 'none',
+    backgroundColor: 'transparent',
+  }
+})
+export const MobileVersion = styled('div', {
+  height: '100%',
+  width: '232px',
+  background: "$gray700 url('https://github.com/oducoelho/book-wise/blob/main/src/assets/sidebar-bg.png?raw=true')",
 })
