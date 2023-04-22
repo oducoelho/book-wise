@@ -2,6 +2,12 @@ import { styled } from "..";
 
 export const PostContainer = styled('div', {
   marginTop: '60px',
+
+  '@media (max-width: 994px)': {
+    position: 'absolute',
+    left:'25px',
+    marginRight: '25px',
+  }
 })
 export const Header = styled('div', {
   display: 'flex',

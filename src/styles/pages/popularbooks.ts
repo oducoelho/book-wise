@@ -3,6 +3,11 @@ import { styled } from "..";
 export const PopularBooksContainer = styled('div', {
   marginTop: '50px',
   width: '355px',
+
+  '@media (max-width: 994px)': {
+    position: 'absolute',
+    left: '60px'
+  },
   
   section: {
     display: 'flex',
@@ -10,6 +15,11 @@ export const PopularBooksContainer = styled('div', {
     justifyContent: 'flex-end',
     flexDirection: 'column',
     paddingLeft: '100px',
+
+    '@media (max-width: 994px)': {
+      paddingLeft: '0px',
+      marginTop: '40px'
+    }
   }
 })
 export const Header = styled('div', {
@@ -29,5 +39,10 @@ export const Header = styled('div', {
     fontWeight: 'bold',
     textDecoration: 'none',
     paddingLeft: '50px',
- }
+ },
+
+ '@media (max-width: 994px)': {
+  paddingLeft: '0px',
+  marginTop: '3300px',
+  }
 })
