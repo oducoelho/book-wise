@@ -28,37 +28,37 @@ export const MyBooks = ({ ratings, isOwnProfile }: ProfileRatingsProps) => {
 
   return (
     <PostContainer>
-    <Header>
-      <div>
-        <User size={30} />
-        <h1>Perfil</h1>
-      </div>
-      <Form>
-        <input 
-          type="text" 
-          placeholder="Buscar livro avaliado" 
-          value={search}
-          onChange={({ target}) => setSearch(target.value)}
-        />
+      <Header>
+        <div>
+          <User size={30} />
+          <h1>Perfil</h1>
+        </div>
+        <Form>
+          <input 
+            type="text" 
+            placeholder="Buscar livro avaliado" 
+            value={search}
+            onChange={({ target}) => setSearch(target.value)}
+          />
 
-        <button>
-          <MagnifyingGlass size={24}/>
-        </button>
-      </Form>
-    </Header>
-    <div>
-      {filteredRatings.map(rating => (
-        <ProfileRatingCard key={rating.id} rating={rating} />
-      ))}
-      {filteredRatings.length <= 0 && (
-        <>
-          <span>
-            {search ? "Nenhum resultado encontrado" : "Nenhuma avaliação encontrada"}
-          </span>
-        </>
-      )}
-      
-    </div>
+          <button>
+            <MagnifyingGlass size={24}/>
+          </button>
+        </Form>
+      </Header>
+      <div>
+        {filteredRatings.map(rating => (
+          <ProfileRatingCard key={rating.id} rating={rating} />
+        ))}
+        {filteredRatings.length <= 0 && (
+          <>
+            <span>
+              {search ? "Nenhum resultado encontrado" : "Nenhuma avaliação encontrada"}
+            </span>
+          </>
+        )}
+        
+      </div>
   </PostContainer>
   )
 }

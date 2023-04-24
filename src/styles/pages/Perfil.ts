@@ -19,4 +19,8 @@ export const Content = styled('div', {
   maxWidth: "996px",
   margin: "0 auto",
   display: "flex",
+  '@media (max-width: 994px)': {
+    display: "block",
+    flexDirection: "column",
+  }
 })

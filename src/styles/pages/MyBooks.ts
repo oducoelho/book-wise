@@ -2,6 +2,13 @@ import { styled } from ".."
 
 export const PostContainer = styled('div', {
   marginTop: '35px',
+
+  '@media (max-width: 994px)': {
+    display: 'flex',
+    flexDirection: 'column',
+    left:'25px',
+    marginRight: '90px',
+  }
 })
 export const Header = styled('div', {
   display: 'flex',
@@ -29,7 +36,7 @@ export const Header = styled('div', {
     padding: '10px 0px',
   },
 })
-export const Form = styled('div', {
+export const Form = styled('form', {
   border: '1px solid $gray500',
   padding:'10px',
   display: 'flex',
@@ -49,6 +56,9 @@ export const Form = styled('div', {
     
     "&:focus": {
       outline: "none"
+    },
+    '@media (max-width: 994px)': {
+
     }
   },
   button: {

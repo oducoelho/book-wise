@@ -2,7 +2,13 @@ import { styled } from "..";
 
 export const AnalyticsContainer = styled('div', {
   marginTop: '35px',
-  marginLeft: '100px'
+  marginLeft: '100px',
+
+  
+  '@media (max-width: 994px)': {
+    marginTop: '0px',
+    marginLeft: '0px'
+  }
 })
 export const Header = styled('section', {
   display: 'flex',
@@ -37,7 +43,17 @@ export const Header = styled('section', {
     background: "$gradient-horizontal",
     borderRadius: "50px",
     marginTop: 40
+  },
+
+  
+  '@media (max-width: 994px)': {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: '90px',
+    marginTop: '20px'
   }
+
 })
 export const Avatar = styled('img', {
   borderRadius: "100%",
@@ -47,6 +63,12 @@ export const Avatar = styled('img', {
   border: '3px solid $gray500'
 })
 export const Content = styled('div', {
+  
+  '@media (max-width: 994px)': {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    marginLeft: '100px',
+  }
 })
 export const Informations = styled('div', {
   display: 'flex',
@@ -66,7 +88,7 @@ export const Informations = styled('div', {
       color: '$gray300',
       fontSize:'$ss',
       //paddingTop: '5px',
-    }
+    },
   },
   svg: {
     marginRight: "12px",
