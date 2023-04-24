@@ -4,6 +4,8 @@
 <img src="https://raw.githubusercontent.com/oducoelho/book-wise/main/public/Inicio%20BookWise.JPG"/>
 <h2>Explore</h2>
 <img src="https://raw.githubusercontent.com/oducoelho/book-wise/main/public/explore%20BookWise.JPG"/>
+<h2>Perfil</h2>
+<img src="https://raw.githubusercontent.com/oducoelho/book-wise/main/public/Perfil%20logado.JPG"/>
 
 ## :memo: Description
 * Application developed during RockeatSeat Ignite challange
