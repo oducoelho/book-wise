@@ -1,24 +1,26 @@
 <h1 align="center">BookWise</h1>
 
-<h2>Home</h2>
-<img src="https://github.com/oducoelho/NLW-Setup/blob/master/images/habits.JPG"/>
-<h2>New Habit</h2>
-<img src="https://github.com/oducoelho/NLW-Setup/blob/master/images/new%20habit.JPG"/>
+<h2>Início</h2>
+<img src="https://raw.githubusercontent.com/oducoelho/book-wise/main/public/Inicio%20BookWise.JPG"/>
+<h2>Explore</h2>
+<img src="https://raw.githubusercontent.com/oducoelho/book-wise/main/public/explore%20BookWise.JPG"/>
 
 ## :memo: Description
-* Application developed during NLW Setup - Ignite
+* Application developed during RockeatSeat Ignite challange
 ## :books: Functions
-* Habits is an app for monitoring daily tasks to help its users track their activities done and not done, with a dynamic similar to github commits.
+* During this challenge, I developed a complete zero-total application, relying on just a Figma design and some Notion tips. BookWise is a book review platform, where user can login with Google or Github and then review books easily.
+
 ## :wrench: Technologies used
 
-* TypeScript
-* ReactJs
-* Radix-ui
-* NodeJs
-* Fastify
-* Phosphoricons
-* Tailwind
-* Axios
+* Next;
+* NextAuth;
+* stitches;
+* radix;
+* TypeScript;
+* Prisma;
+* React Query;
+* docker;
+* NodeJs;
 
 ## :handshake: Collaborators
 <table>
