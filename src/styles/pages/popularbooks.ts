@@ -8,7 +8,7 @@ export const PopularBooksContainer = styled('div', {
     position: 'absolute',
     left: '60px'
   },
-  
+
   section: {
     display: 'flex',
     alignItems: 'center',
@@ -43,6 +43,6 @@ export const Header = styled('div', {
 
  '@media (max-width: 994px)': {
   paddingLeft: '0px',
-  marginTop: '3300px',
-  }
+  marginTop: '3700px',
+  },
 })

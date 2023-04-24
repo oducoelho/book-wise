@@ -5,7 +5,6 @@ export const InitialPageContainer = styled('div', {
   height: "100vh",
   display: "grid",
   gridTemplateColumns: "auto 1fr",
-
 })
 export const Content = styled('div', {
   width: "100%",
@@ -16,6 +15,7 @@ export const Content = styled('div', {
 
   '@media (max-width: 994px)': {
     marginTop: '50px',
-    display: "block",
+    display: "flex",
+    flexDirection: "column",
   }
 })

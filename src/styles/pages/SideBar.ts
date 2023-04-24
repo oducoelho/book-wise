@@ -30,7 +30,7 @@ export const Options = styled('div', {
 })
 
 export const Login = styled('div', {
-  paddingTop: '680px',
+  paddingTop: '640px',
   span: {
     fontSize: '$sm',
     color: '$gray200',
