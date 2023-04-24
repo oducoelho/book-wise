@@ -30,6 +30,10 @@ export const DialogContent = styled(Dialog.Content, {
 
   "&::-webkit-scrollbar-thumb": {
     background: "$gray600"
+  },
+
+  '@media (max-width: 994px)': {
+    width: 467,
   }
 })
 export const DialogClose = styled(Dialog.Close, {
@@ -56,7 +60,12 @@ export const BookDetailsContainer = styled("div", {
 export const BookImage = styled(Image, {
   borderRadius: "16px",
   objectFit: "cover",
-  minWidth: 171
+  minWidth: 171,
+
+  '@media (max-width: 994px)': {
+    minWidth: 50,
+    height: 200,
+  }
 })
 export const BookContent = styled("div", {
   display: "flex",
@@ -68,7 +77,7 @@ export const BookInfos = styled("div", {
   paddingTop: 24,
   borderTop: "1px solid $gray600",
   display: "flex",
-  gap: 60
+  gap: 60,
 })
 export const BookName = styled("div", {
   fontSize: "18px",
