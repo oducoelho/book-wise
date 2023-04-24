@@ -21,7 +21,7 @@ export default function Home() {
           <h1>Boas Vindas!</h1>
           <p>Faça login ou assece como visitante</p>
         </Content>
-        <LoginOption onClick={() => signIn('google')}>
+        <LoginOption onClick={() => signIn('google') }>
           <Image src={Google} alt="" />
           <button>Entrar com o Google</button>
         </LoginOption>
