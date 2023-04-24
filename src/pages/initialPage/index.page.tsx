@@ -6,6 +6,7 @@ import { SideBar } from "../../components/Sidebar";
 export default function initialPage() {
   return (
     <InitialPageContainer>
+      <title>Início | BookWise</title>
       <SideBar />
       <Content>
         <Posts />

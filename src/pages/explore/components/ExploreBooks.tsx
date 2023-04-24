@@ -32,6 +32,7 @@ export const ExploreBooks = () => {
 
   return (
     <BooksContainer>
+      <title>Explorar | BookWise</title>
       <Find
         placeholder="Buscar livro ou autor"
         icon={<MagnifyingGlass size={20} />}

@@ -40,6 +40,7 @@ export const ProfilePage: NextPageWithLayout = () => {
 
   return (
     <ProfilePageContainer>
+      <title>Perfil | BookWise</title>
       {!!profile? (
         <>
         <PerfilContainer>

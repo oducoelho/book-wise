@@ -1,19 +1,20 @@
-import { Content, HomeContainer, HomeImage, Login, LoginOption } from "@/styles/pages/Home"
+import { Content, HomeContainer, HomeImage, ImageLogo, Login, LoginOption } from "@/styles/pages/Home"
 import WallPaper from '../assets/HomeCover.png'
 import Google from '../assets/logos_google-icon.png'
 import GitHub from '../assets/akar-icons_github-fill.png'
 import VisitanteIcon from '../assets/RocketLaunch.png'
-import Image from "next/image"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/router"
+import Image from "next/image"
 
 export default function Home() {
   const router = useRouter();
 
   return (
     <HomeContainer>
+      <title>Login | BookWise</title>
       <HomeImage>
-        <Image src={WallPaper} alt="" />
+        <ImageLogo src={WallPaper} alt="" />
       </HomeImage>
       <Login>
         <Content>

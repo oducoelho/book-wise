@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { styled } from "..";
 
 export const HomeContainer = styled('div', {
@@ -24,11 +25,15 @@ export const Login = styled('div', {
 
 export const HomeImage = styled('div', {
   padding: '25px 0px 10px 25px',
+  borderRadius: 8,
 
   '@media (max-width: 994px)': {
     display: 'none',
     padding: '0px 0px 0px 0px',
   }
+})
+export const ImageLogo = styled(Image, {
+  borderRadius: 8,
 })
 
 export const Content = styled('div', {
