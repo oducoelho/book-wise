@@ -57,9 +57,6 @@ export const Form = styled('form', {
     "&:focus": {
       outline: "none"
     },
-    '@media (max-width: 994px)': {
-
-    }
   },
   button: {
     border: 'none',

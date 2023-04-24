@@ -3,6 +3,13 @@ import { styled } from "..";
 export const HomeContainer = styled('div', {
   height: '100vh',
   display: 'flex',
+  '@media (max-width: 994px)': {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: '0px',
+  }
 })
 
 export const Login = styled('div', {
@@ -10,10 +17,18 @@ export const Login = styled('div', {
   flexDirection: 'column',
   justifyContent: 'center',
   paddingLeft: ' 500px',
+  '@media (max-width: 994px)': {
+    paddingLeft: '0px',
+  }
 })
 
 export const HomeImage = styled('div', {
-  padding: '25px 0px 10px 25px'
+  padding: '25px 0px 10px 25px',
+
+  '@media (max-width: 994px)': {
+    display: 'none',
+    padding: '0px 0px 0px 0px',
+  }
 })
 
 export const Content = styled('div', {
