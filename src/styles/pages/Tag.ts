@@ -3,7 +3,7 @@ import { styled } from "..";
 export const CategoriesContainer = styled('div',{
   display: 'flex',
   gap: '20px',
-  paddingTop: '20px'
+  paddingTop: '20px',
 })
 export const Container = styled('div',{
   background: "none",

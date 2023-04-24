@@ -4,6 +4,14 @@ export const FindContainer = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  
+  '@media (max-width: 994px)': {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    left:'25px',
+    marginRight: '25px',
+  }
 })
 export const Title = styled('div', {
   display: 'flex',
@@ -17,6 +25,10 @@ export const Title = styled('div', {
   span: {
     fontSize: '$2xl',
     color: '$gray100'
+  },
+
+  '@media (max-width: 994px)': {
+    paddingBottom: '10px'
   }
 })
 export const Form = styled('form', {
@@ -36,6 +48,10 @@ export const Form = styled('form', {
     
     "&:focus": {
       outline: "none"
+    },
+
+    '@media (max-width: 994px)': {
+      marginRight: '100px',
     }
   },
   button: {
@@ -47,5 +63,6 @@ export const Form = styled('form', {
       color: '$gray500',
       marginRRight: '20px',
     }
-  }
+  },
+
 })

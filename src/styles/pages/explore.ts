@@ -5,6 +5,12 @@ export const ExploreContainer = styled('div', {
   height: "100vh",
   display: "grid",
   gridTemplateColumns: "auto 1fr",
+
+  '@media (max-width: 994px)': {
+    display: "flex",
+    position: 'absolute'
+
+  }
 })
 export const Content = styled('div', {
   width: "100%",
